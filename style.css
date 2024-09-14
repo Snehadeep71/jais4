@@ -94,8 +94,8 @@
     text-align: center;
     
     width: 100%;
-    background: url(images/navbar-bcg.jpg) no-repeat center center/cover;
-    /* background: transparent; */
+    /* background: url(images/navbar-bcg.jpg) no-repeat center center/cover; */
+    background: transparent;
     background-size: 100% 100px;
     z-index: var(--z-fixed);
   }
@@ -177,6 +177,11 @@
     .nav__menu .nav__list .nav__link.nav__culture {
       margin-bottom: 1.5rem; 
       
+      
+    }
+    .nav__list li a{
+      color: #fff;
+      font-weight: bold;
     }
   
     .nav__menu::-webkit-scrollbar {
@@ -184,7 +189,7 @@
     }
   
     .nav__list {
-      background-color: var(--black-color);
+      background-color: #37210f;
       padding-top: 1rem;
     }
     
@@ -964,33 +969,39 @@
   font-size: 3rem;
 }
 /*----------------section 10 responsive css starts here-----------------*/
-@media only screen and (min-width:200px) and (max-width:1336px){
-  .sec-10{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      align-items: center;
-      justify-content: center;
+/* Responsive Styles */
+@media only screen and (min-width: 200px) and (max-width: 1336px) {
+  .sec-10 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .counter-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  .counter-container{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
+
+  .counter-box {
+    display: flex;
+    flex-direction: column; /* Ensure column direction in mobile view */
+    align-items: center;
+    width: auto; /* Adjust width to fit content */
+    height: auto; /* Adjust height to fit content */
+    margin: 10px 0; /* Add some spacing between items */
   }
-  .counter-box{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: auto;
-      height: 100px;
-      flex-direction: column;
-      flex-wrap: wrap;
+
+  .counter-box p, .counter {
+    margin: 0; /* Remove default margin that might affect alignment */
+    text-align: center; /* Center text horizontally */
   }
 }
 /*----------------section 10 responsive css ends here-----------------*/
