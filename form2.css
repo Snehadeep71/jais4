@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*------------------------------form 2 section 1 starts here------------------------*/
+.secondform{
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.secondform h2{
+    font-size: 2.5rem;
+    color: #37210f;
+    font-weight: bold;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+.secondform h6{
+    font-size: 1.1rem;
+    color: #764c25;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+.formsecond {
+    width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+    border: 2px solid grey;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.formleft {
+    width: 100%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0px auto;
+    font-family: Arial, sans-serif;
+    flex: 1 0 50%;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+button {
+    width: 30px; /* Increased button width for visibility */
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 5px; /* Ensure small space between buttons and input */
+}
+
+input[disabled] {
+    background-color: #f9f9f9;
+}
+
+label {
+    font-size: 16px;
+    color: #37210f;
+    font-weight: bold;
+    margin-right: 10px; /* Add spacing between label and controls */
+    text-align: left;
+}
+.formright{
+    flex: 1 0 50%;
+    width: 100%;
+    max-width: 50%;
+}
+.formright img{
+    width: 100%;
+    max-width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.formright  p{
+    padding: 20px 20px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    color: #764c25;
+}
+.formright h3{
+    color: #37210f;
+    font-size: 2rem;
+    font-weight: bold;
+}
+button .btn2{
+    width: 100%;
+    height:  inherit;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+/*--------------------------form 2 responsive css starts here-------------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+    .secondform{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .formsecond{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .formleft{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .formright{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+     .btn2{
+        width: 100%;
+        max-width: 50%;
+        margin: 0 auto;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 10px auto;
+        box-sizing: border-box;
+    }
+    #whatsappButton{
+        margin-bottom: 80px;
+        box-sizing: border-box; 
+    }
+    .field button{
+        width: 20px;
+    }
+}
+/*--------------------------form 2 responsive css ends here-------------------*/
+/*------------------------------form 2 section 1 starts here------------------------*/

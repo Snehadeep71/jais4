@@ -1,0 +1,284 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*--------------about sec-01 css starts here----------*/
+.asec-01{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 90%;
+    min-height: 100vh;
+    margin: 10vh auto;
+    padding-top: 10vh;
+    position: relative;
+    padding: 50px; 
+
+}
+.abouthead h1{
+    text-align: center;
+    align-items: center;
+     display: block;
+    z-index: 100;
+    top: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.aboutleft,
+.aboutright{
+
+    flex: 1 0 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.about-left{
+    position: relative;
+    
+}
+.aboutleft img:nth-child(1){
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 60%;
+}
+.aboutleft img:nth-child(2){
+    position: absolute;
+    right: 0;
+    top: -10%;
+}
+.aboutright p{
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 2;
+    color: #764c25;
+    letter-spacing: 0px;
+}
+.aboutright h5{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    color: #764c25;
+}
+.aboutright h2{
+    font-size: 2.7rem;
+    color: #37210f;
+    font-weight: bold;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+
+.swiper-container {
+    position: absolute;
+    width: 100%;
+    max-width: 60%;
+    height: 100%;
+    max-height: 100%;
+    z-index: 1;
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+
+
+/* Ensure the swiper-slide takes up the full height of its container */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden; 
+}
+
+/* Style the image to be responsive and centered */
+.swiper-slide img {
+    display: block; 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease-in-out; 
+}
+
+/* Hover effect for the image */
+.swiper-slide img:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000; 
+    z-index: 11; 
+}  
+/*-----------------new code-------------*/
+/* .asec-01 {
+    
+} */
+
+/* Large background image styling */
+.background-image {
+    width: 100%; /* Full width for large image */
+    height: auto;
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Swiper container styling */
+.swiper-container {
+    position: absolute;
+    top: 65%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 200px;
+    height: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.swiper-slide img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.swiper-pagination {
+    bottom: 10px; 
+}
+
+.swiper-pagination-bullet {
+    background: #000; 
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000; 
+}
+/*-----------------new code-------------*/
+/*------------------about sec 01 responsive css starts here------------------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+    .asec-01{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+
+    }
+    .about-left{
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        z-index: 1;
+    }
+    .swiper-container{
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        top: 80%;
+    }
+    .aboutright {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+
+    .aboutright h5 {
+        font-size: 1.5rem; 
+        padding: 50px 0px;
+        box-sizing: border-box;
+    }
+
+    .aboutright h2 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .aboutright p {
+        font-size: 0.9rem; /* Adjust font size for paragraphs */
+        margin: 0 0 10px; 
+    }
+}
+/*------------------about sec 01 responsive css ends here------------------------*/
+/*--------------about sec-01 css ends here----------*/
+/*--------------about sec-02 css starts here----------*/
+.asec-02{
+    width: 100%;
+    min-height: 70vh;
+    background: url(images/bg-1.jpg) center center/cover;
+    position: relative;
+}
+.sec-02content{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    bottom: 20px;
+    left: 120px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: left;
+    align-items: center;
+    margin: 0 auto;
+    line-height: 1.6;
+
+}
+.sec-02content h2{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #37210f;
+}
+.sec-02content p{
+    color: #764c25;
+    font-weight: bold;
+}
+/*--------------about sec-02 css ends here----------*/
+/*--------------about sec-02  responsive css starts here----------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+    .asec-02{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    .sec-02content{
+        text-align: center;
+        justify-content: center;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+}
+/*--------------about sec-02  responsive css ends here----------*/

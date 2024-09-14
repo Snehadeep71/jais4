@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+/*------------------------form 1 section starts here---------------------*/
+    .formfirst {
+        position: relative;
+        top: 1.5%;
+        right: 5%;
+        width: auto;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        z-index: 1;
+        padding: 30px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header styling */
+    .formfirst h1 {
+        text-align: left;
+        font-size: 2rem;
+        color: #37210f;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    /* Step description styling */
+    .formfirst p {
+        font-size: 0.9rem;
+        color: #764c25;
+        font-weight: bold;
+        text-align: left;
+        margin-top: 0;
+    }
+    
+    /* Subheading styling */
+    .formfirst h5 {
+        padding-top: 20px;
+        color: #37210f;
+        font-weight: bold;
+        margin: 0;
+        text-align: left;
+    }
+    
+    /* Flexbox for layout */
+    .form1boxes1 {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: auto;
+        padding: 20px 0px;
+        box-sizing: border-box;
+        gap: 15px; /* Adjusted for better spacing */
+        color: #37210f;
+       
+    }
+    
+    /* Box styling */
+    .form1box12 {
+        border: 1px solid #37210f;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    /* Hover and selected state styling */
+    .form1box12:hover,
+    .form1box12.selected {
+        background-color: #764c25;
+        color: #fff;
+    }
+    
+    /* Button styling */
+    .btn1 {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        font-weight: bold;
+        background-color: #37210f;
+        color: #fff;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    /* Button disabled state */
+    .btn1:disabled {
+        background-color: #ddd;
+        color: #aaa;
+        cursor: not-allowed;
+    }
+    
+    /* Button hover state */
+    .btn1:hover:not(:disabled) {
+        background-color: #fff;
+        color: #764c25;
+    }
+    
+    .selected1 {
+        background-color: #007bff; /* Example background color */
+        color: white; /* Example text color */
+    }
+/*------------------------form 1 section ends here---------------------*/
+/*------------------------form 1 section responsive css starts here---------------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+    .formfirst{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .form1boxes1{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/*------------------------form 1 section responsive css ends here---------------------*/

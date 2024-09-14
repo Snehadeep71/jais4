@@ -1,0 +1,174 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*------------------------work section 1 css starts here---------------*/
+.wsec-01{
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    margin-top: 20vh;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.wsec-01 h1{
+    font-size: 3rem;
+    color: #37210f;
+    font-weight: bold;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+.wsec-01 p{
+    font-weight: bold;
+    color: #764c25;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+/* Gallery Container */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-image {
+    width: 30%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* The Modal (fullscreen) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Slideshow Images */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Next & Previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Thumbnail images */
+.thumbnail-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    padding: 5px;
+}
+
+.thumbnail {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+
+.thumbnail:hover, .active-thumbnail {
+    opacity: 1;
+}
+
+/*------------------------work section 1 css ends here---------------*/
+/*------------------work section 1 responsive css starts here------------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+    .wsec-01{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+         width: 100%;
+         text-align: center;
+         align-items: center;
+         justify-content: center;
+         height: auto;
+    }
+    .gallery{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery-image{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box
+    }
+}
+/*------------------work section 1 responsive css ends here------------------*/

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAIS-Step 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="jquery.flipster.min.css">
+    <link rel="stylesheet" href="form2.css">
+</head>
+<body>
+    <section class="secondform">
+        <h2>TELL US WHAT YOU NEED</h2>
+        <h6>STEP 2 OF 2</h6>
+        <div class="formsecond">
+            <div class="formleft">
+                <div class="field">
+                    <label>Kitchen</label>
+                    <input type="checkbox" checked disabled>
+                </div>
+                <div class="field">
+                    <label>Wardrobe</label>
+                    <button onclick="decrement('wardrobe')">-</button>
+                    <input type="text" id="wardrobe" value="2" readonly>
+                    <button onclick="increment('wardrobe')">+</button>
+                </div>
+                <div class="field">
+                    <label>Entertainment unit</label>
+                    <button onclick="decrement('entertainment')">-</button>
+                    <input type="text" id="entertainment" value="1" readonly>
+                    <button onclick="increment('entertainment')">+</button>
+                </div>
+                <div class="field">
+                    <label>Study unit</label>
+                    <button onclick="decrement('study')">-</button>
+                    <input type="text" id="study" value="1" readonly>
+                    <button onclick="increment('study')">+</button>
+                </div>
+                <div class="field">
+                    <label>Crockery unit</label>
+                    <button onclick="decrement('crockery')">-</button>
+                    <input type="text" id="crockery" value="1" readonly>
+                    <button onclick="increment('crockery')">+</button>
+                </div>
+            </div>
+            <div class="formright">
+                <img src="images/tv-cabinate2.jpg" alt="image_not_available">
+                <h3>Other Interior Products</h3>
+                <p>Get interiors done for your living room, study and foyer areas along with false ceilings, painting and modular furniture.</p>
+            </div>
+        </div>
+        <a href="index.html"><button class="btn2" id="backButton">Back</button></a>
+        <button class="btn2" id="whatsappButton">Send to Whatsapp</button>
+        <p id="confirmationMessage" style="color: green; display: none;">Message has been sent!</p>
+    </section>
+    
+    <!---------------section 13 html ends here----------------------------->
+    <script>
+// form2.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backButton = document.getElementById('backButton');
+    const whatsappButton = document.getElementById('whatsappButton');
+
+    // Check if elements exist
+    if (!backButton || !whatsappButton) {
+        console.error('One or more buttons are missing in the HTML.');
+        return;
+    }
+
+    // Retrieve data from local storage
+    const selectedFloorplan = localStorage.getItem('floorplan');
+    const selectedPurpose = localStorage.getItem('purpose');
+
+    function increment(id) {
+        const input = document.getElementById(id);
+        let currentValue = parseInt(input.value);
+        if (currentValue < 3) { // Cap the value at 3
+            input.value = currentValue + 1;
+        }
+    }
+
+    function decrement(id) {
+        const input = document.getElementById(id);
+        let currentValue = parseInt(input.value);
+        if (currentValue > 0) { // Cap the value at 0
+            input.value = currentValue - 1;
+        }
+    }
+
+    function handleSendToWhatsapp() {
+        const wardrobe = document.getElementById('wardrobe').value;
+        const entertainment = document.getElementById('entertainment').value;
+        const study = document.getElementById('study').value;
+        const crockery = document.getElementById('crockery').value;
+
+        const message = `New Inquiry:\n\nFloorplan: ${selectedFloorplan}\nPurpose: ${selectedPurpose}\nWardrobe: ${wardrobe}\nEntertainment unit: ${entertainment}\nStudy unit: ${study}\nCrockery unit: ${crockery}`;
+
+        // Replace 'YOUR_PHONE_NUMBER' with your actual phone number including country code
+        const whatsappURL = `https://api.whatsapp.com/send?phone=919836790822&text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+
+        // Show confirmation message
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        if (confirmationMessage) {
+            confirmationMessage.style.display = 'block';
+            setTimeout(function() {
+                confirmationMessage.style.display = 'none'; // Hide it after 3 seconds
+            }, 3000); // Message will disappear after 3 seconds
+        }
+    }
+
+    backButton.addEventListener('click', () => {
+        window.history.back(); // Navigate back to the first form
+    });
+
+    whatsappButton.addEventListener('click', handleSendToWhatsapp);
+
+    // Expose increment and decrement functions for HTML buttons
+    window.increment = increment;
+    window.decrement = decrement;
+});
+    </script>
+    <script src="script.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-93c48caf-b069-4258-ace7-bcb04a3ae7e8" data-elfsight-app-lazy></div>
+</body>
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAIS-Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="jquery.flipster.min.css">
+
+
+</head>
+<!-- new website started on 26/06/2024 -->
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                    <!-- <h1>JAIS INTERIO</h1> -->
+                    <!-- <img src="images/jais-main-logo.jpeg" alt="image_not_available"> -->
+                    <img src="images/jais-logo-svg.svg" alt="image_not_available">
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="about.html" class="nav__link"  style="text-decoration: none; list-style: none; ">About Us</a></li>
+                    <li><a href="work.html" class="nav__link" style="text-decoration: none; list-style: none; ">Works</a></li>
+                    <li><a href="ourservices.html" class="nav__link" style="text-decoration: none; list-style: none; ">Our Services</a></li>
+                    <li><a href="contactus.html" class="nav__link" style="text-decoration: none; list-style: none; ">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-----------section 1 html starts here------------------------->
+    <section class="sec-01">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!--Slide 1 -->
+                <!-- <div class="swiper-slide">
+                    <img src="images/jais-home-bcg.jpg" alt="image_not_available">
+                </div> -->
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="images/01.jpg" alt="image_not_available">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/02.jpg" alt="image_not_available">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/g4.webp" alt="image_not_available">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/n1.jpeg" alt="image_not_available">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/n2.jpeg" alt="image_not_available">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/n3.jpeg" alt="image_not_available">
+                </div>
+
+
+            </div>
+        </div>
+        <div class="form1">
+            <h1>Personalized Interior Design Quote in Minutes</h1>
+            <p>STEP 1 OF 2</p>
+            <h5>Your floorplan</h5>
+            <div class="form1boxes" id="floorplan">
+                <div class="form1box1" data-type="1 BHK">1 BHK</div>
+                <div class="form1box1" data-type="2 BHK">2 BHK</div>
+                <div class="form1box1" data-type="3 BHK">3 BHK</div>
+                <div class="form1box1" data-type="4 BHK">4 BHK</div>
+            </div>
+            <h5>Purpose</h5>
+            <div class="form1boxes" id="purpose">
+                <div class="form1box1" data-type="Move In">Move In</div>
+                <div class="form1box1" data-type="Rent Out">Rent Out</div>
+                <div class="form1box1" data-type="Renovate">Renovate</div>
+            </div>
+            <a href="form2.html" target="_blank"><button class="btn1" id="proceedButton" disabled>PROCEED</button></a>
+        </div>
+    </section>
+    <!-----------section 1 html ends here------------------------->
+    <!-- Popup Form using <dialog> -->
+        <div class="login_popup" id="popup_form">
+            <div class="box">
+                <div class="form1 formextra">
+                    <div class="close" id="close_btn">&times;</div>
+                    <h1>Personalized Interior Design Quote in Minutes</h1>
+                    <p>STEP 1 OF 2</p>
+                    <h5>Your floorplan</h5>
+                    <div class="form1boxes" id="popup_floorplan">
+                        <div class="form1box1" data-value="1">1 BHK</div>
+                        <div class="form1box1" data-value="2">2 BHK</div>
+                        <div class="form1box1" data-value="3">3 BHK</div>
+                        <div class="form1box1" data-value="4">4 BHK</div>
+                    </div>
+                    <h5>Purpose</h5>
+                    <div class="form1boxes" id="popup_purpose">
+                        <div class="form1box1" data-value="move-in">Move In</div>
+                        <div class="form1box1" data-value="rent-out">Rent Out</div>
+                        <div class="form1box1" data-value="renovate">Renovate</div>
+                    </div>
+                    <a href="form2.html" id="proceed_link" target="_blank"><button class="btn2" id="popup_proceed" disabled>GET FREE ESTIMATE</button></a>
+                </div>
+            </div>
+        </div>
+
+    <!-----------section 2 html starts here------------------------->
+    <section class="sec-02">
+        <h1>Why Choose Us?</h1>
+        <div class="slider1">
+            <div class="slide-track">
+                <div class="slide12">
+                    <i class="fa-solid fa-building"></i>
+                    <p>22 cities</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <p>Delivery in 45 days or we pay rent</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-person"></i>
+                    <p>600+ In house designers</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-user-ninja"></i>
+                    <p>No hidden cost</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-house"></i>
+                    <p>35k+ homes delivered</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-house"></i>
+                    <p>44 Studios</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-award"></i>
+                    <p>Flat 10 years Warranty</p>
+                </div>
+                <div class="slide12">
+                    <i class="fa-solid fa-calculator"></i>
+                    <p>Easy EMI's</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-----------section 2 html ends here------------------------->
+    <!-----------section 3 html starts here------------------------->
+    <section class="sec-03">
+        <h1>Get your estimate in 3 simple steps</h1>
+        <div class="section3boxes">
+            <div class="sec03box1">
+                <img src="images/blueprint.png" alt="image_not_available">
+                <h2>Choose your BHK type and purpose</h2>
+                <p>The type of house and purpose (Move in, rent out, renovate),helps us understand your requirements
+                    better.</p>
+            </div>
+            <div class="sec03box1">
+                <img src="images/paragraph.png" alt="image_not_available">
+                <h2>Pick the rooms/areas of the house to be designed</h2>
+                <p>We'll be able to understand the scope of work for your interiors from this.</p>
+            </div>
+            <div class="sec03box1">
+                <img src="images/television.png" alt="image_not_available">
+                <h2>Share contact and move-in details</h2>
+                <p>We can get in touch and better plan the design process for you</p>
+            </div>
+        </div>
+        <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+    </section>
+    <!-----------section 3 html ends here------------------------->
+    <hr>
+    <!-----------section 4 html starts here------------------------->
+    <section class="sec-04">
+        <h2>JAIS's end-to-end interior solutions </h2>
+        <div class="sec-04boxes">
+            <div class="sec-04box1">
+                <img src="images/modular-kitchen.jpg" alt="image_not_available">
+                <p>Modular Kitchen</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/cup-board-icon.jpg" alt="image_not_available">
+                <p>Storage and wardrobe</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/crockery.png" alt="image_not_available">
+                <p>Crockery Units</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/space-saving.jpg" alt="image_not_available">
+                <p>Space Saving Furniture</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/tv-unit.jpg" alt="image_not_available">
+                <p>TV Units</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/study-table.jpg" alt="image_not_available">
+                <p>Study Tables</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/false-ceiling.png" alt="image_not_available">
+                <p>False Ceiling</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/lights2.avif" alt="image_not_available">
+                <p>Lights</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/wallpaper-icon.png" alt="image_not_available">
+                <p>Wallpaper</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/wall-paint.png" alt="image_not_available">
+                <p>Wall Paint</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/bathroom-icon.jpg" alt="image_not_available">
+                <p>Bathroom</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/puja-unit.jpg" alt="image_not_available">
+                <p>Pooja Unit</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/fooyer-design.jpg" alt="image_not_available">
+                <p>Foyer Designs</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/moveable-furniture.jpg" alt="image_not_available">
+                <p>Movable furniture</p>
+            </div>
+            <div class="sec-04box1">
+                <img src="images/kids-bedroom.jpg" alt="image_not_available">
+                <p>Kids Bedroom</p>
+            </div>
+        </div>
+        <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+    </section>
+    <!-----------section 4 html ends here------------------------->
+
+    <!--------------section 10 html starts here------------------->
+    <section class="sec-10">
+        <h1>Let our numbers do the talking!</h1>
+        <div class="counter-container">
+            <div class="counter-box">
+                <div class="counter" data-target="75000">0</div>
+                <p>JaisHomes</p>
+            </div>
+            <div class="counter-box">
+                <div class="counter" data-target="3500">0</div>
+                <p>designers</p>
+            </div>
+            <div class="counter-box">
+                <div class="counter" data-target="40">0</div>
+                <p>cities</p>
+            </div>
+        </div>
+    </section>
+    <!--------------section 10 html ends here------------------->
+    <!--------------section 5 html starts here------------------->
+    <section class="sec-05">
+        <h2>Design gallery</h2>
+        <p>Look no further than JAIS for end-to-end interior design services</p>
+        <div class="slider-container">
+            <!-- Progress bar container -->
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <!-- Markers for each slide -->
+                <div class="progress-markers">
+                    <div class="marker"></div>
+                    <div class="marker"></div>
+                    <div class="marker"></div>
+                </div>
+            </div>
+    
+            <div class="slider">
+                <div class="slider-wrapper">
+                    <div class="slider-item">
+                        <img src="images/g1.webp" alt="Image 1">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g2.webp" alt="Image 2">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g3.webp" alt="Image 3">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g4.webp" alt="Image 3">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g5.webp" alt="Image 3">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g6.webp" alt="Image 3">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g7.webp" alt="Image 3">
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/g8.webp" alt="Image 3">
+                    </div>
+                </div>
+    
+                <!-- Navigation Arrows -->
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+        </div>
+    
+        <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+    </section>
+    <hr>
+    <!--------------section 5 html ends here------------------->
+    <!--------------section 6 html starts here------------------->
+    <section class="sec-06">
+        <h2>Happy Homes by JAIS</h2>
+        <div class="box-container">
+            <div class="box1">
+                <img src="images/testi1.webp" alt="image_not_available">
+                <div class="box1content">
+                    <h3>Ananya Chatterjee.</h3>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <p>"JAIS Interior did an outstanding job with my home renovation! From the initial consultation to the final touches, their team was incredibly professional and attentive. The project was completed on time. The only minor issue was with some delayed communication </p>
+                </div>
+            </div>
+            <div class="box1">
+                <img src="images/testi2.webp" alt="image_not_available">
+                <div class="box1content">
+                    <h3>Arindam Banerjee</h3>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <p>"I recently hired JAIS Interior for my office space, and I couldn't be happier with the results. Their attention to detail and innovative ideas made a huge difference in the overall look and feel of my workspace. I highly recommend them to anyone looking for quality interior design services."</p>
+                </div>
+            </div>
+            <div class="box1">
+                <img src="images/testi3.webp" alt="image_not_available">
+                <div class="box1content">
+                    <h3>Srimanta Roy</h3>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <p>One of the most promising company i have ever seen, every staff of this company are very polite and skilled.
+                        The team was punctual and respectful of my time. If you're in Barasat and need top-notch interior services, these are the folks to call!"
+                    </p>
+                </div>
+            </div>
+            <div class="box1">
+                <img src="images/testi1.webp" alt="image_not_available">
+                <div class="box1content">
+                    <h3>Shreya Sulekhan</h3>
+                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                    <p>They provide quality and professional interior design service. The design they suggested for my living room transformed it into a cozy and stylish space. Highly recommend them for anyone looking to enhance their home!"</p>
+                </div>
+            </div>
+            <!-- <button class="prev" onclick="slideSlider(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next" onclick="slideSlider(1)"><i class="fa-solid fa-arrow-right"></i></button> -->
+        </div>
+        <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+    </section>
+    <hr>
+    <!--------------section 6 html ends here------------------->
+    <!--------------section 7 html starts here------------------->
+    <section class="sec-07">
+        <h2>Get an estimate for your Home</h2>
+        <p>Calculate the cost of doing up your home interiors now.</p>
+        <div class="sec-07container">
+            <div class="sec-07box">
+                <div class="sec-07boxleft">
+                    <img src="images/full-interior-image.jpg" alt="image_not_available">
+                    <h3>Full Home Interiors</h3>
+                    <p>Get the estimate price for your full home interiors.</p>
+                    <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+                </div>
+                <div class="sec-07boxright">
+                    <img src="images/calculator.webp" alt="image_not_available">
+                </div>
+            </div>
+            <div class="sec-07box">
+                <div class="sec-07boxleft">
+                    <img src="images/kitchen.png" alt="image_not_available">
+                    <h3>Kitchen</h3>
+                    <p>Get costing for your kitchen interiors.</p>
+                    <a href="form1.html" target="_blank"><button class="btn2" style="margin-top: 55px;">GET FREE ESTIMATE</button></a>
+                </div>
+                <div class="sec-07boxright">
+                    <img src="images/calculator.webp" alt="image_not_available">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------section 7 html ends here------------------->
+    <!--------------section 8 html starts here------------------->
+    <section class="sec-08">
+        <div class="sec08header">
+            <h2>What We Offer</h2>
+            <a href="form1.html" target="_blank"><button class="btn2">GET FREE ESTIMATE</button></a>
+        </div>
+        <div class="sec-08boxes">
+            <div class="sec-08box">
+                <div class="sec08heading">
+                    <img src="images/hardware1.png" alt="image_not_available">
+                    <h3>Our Services</h3>
+                </div>
+                <div class="sec08content">
+                    <ul>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Modular Kitchen</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Modular Wardrobes</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Lighting</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Flooring</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Electrical Work</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Civil Work</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">False Ceiling</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Wall Design & Painting</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="sec-08box">
+                <div class="sec08heading">
+                    <img src="images/warranty.png" alt="image_not_available">
+                    <h3>Warranty</h3>
+                </div>
+                <div class="sec08content">
+                    <ul>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Flat 10 years Warranty, stay
+                            worry free with our 10 years warranty policy with our modular products</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">upto 1 year on site service
+                            warranty, warranty on on site services such as painting, electrical, plumbing</li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="sec-08box">
+                <div class="sec08heading">
+                    <img src="images/technology&science.png" alt="image_not_available">
+                    <h3>Technology & Science</h3>
+                </div>
+                <div class="sec08content">
+                    <ul>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">AquaBlocR Technology -
+                            Hermetically sealed edges that ensure no moisture enters the panels of your modular
+                            cabinets.</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">AntiBubble® Technology - Super
+                            seamless panels without air bubbles for your modular cabinets.</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">DuraBuildTM Technology - Robust
+                            structure for modular cabinets, making them strong and long-lasting.
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="sec-08box">
+                <div class="sec08heading">
+                    <img src="images/pricebenefits.png" alt="image_not_available">
+                    <h3>Price Benefits</h3>
+                </div>
+                <div class="sec08content">
+                    <ul>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Price-match guarantee - Price
+                            match to a valid quote in comparison with a branded player and for exact scope.</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">Flexible payment options - EMI
+                            solutions and payment schemes from leading financial partners.</li>
+                        <li><img src="images/bullet-icon.webp" alt="image_not_available">No hidden costs - Transparent
+                            costing without last-minute additions.</li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--------------section 8 html ends here------------------->
+    <!----------------i have to do the testimonial section later------>
+        <div class="container2">
+
+            <div class="contents-wraper">
+
+                <section class="testi-header">
+                    <h1>Testimonials</h1>
+                </section>
+
+                <section class="testRow">
+
+                    <div class="testItem active">
+                        <img src="images/testimen1.jpeg">
+                        <h3>Sk Akbor</h3>
+                        <h4>Garden Reach, Kolkata</h4>
+                        <p>I would like to thanks team JAIS for the excellent work they have delivered for my 3BHK flat.
+                            Nicely planned and executed as per agreed terms. We strongly recommended them.</p>
+                    </div>
+
+                    <div class="testItem">
+                        <img src="images/testimen2.jpeg">
+                        <h3>Chiranjit Maity</h3>
+                        <h4>Rashbihari, Kolkata</h4>
+                        <p>One of the most promising company i have ever seen, every staff of this company are very polite
+                            and skilled.</p>
+                    </div>
+
+                    <div class="testItem">
+                        <img src="images/testimen3.jpeg">
+                        <h3>Pritam Sarkar</h3>
+                        <h4>Shobhabazar Sutanuti, Kolkata</h4>
+                        <p>I would like to thank Jais interio and team for the excellent work they have delivered for my
+                            kitchen. Nicely planned and executed as per agreed terms. I strongly recommend them.</p>
+                    </div>
+
+                    <div class="testItem">
+                        <img src="images/testiwomen1.jpeg">
+                        <h3>Jiya Rahaman</h3>
+                        <h4>Barasat, North 24 Parganas,Kolkata</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+
+                    <div class="testItem">
+                        <img src="images/testiwomen2.jpeg">
+                        <h3>Priyanka Biswas</h3>
+                        <h4>Barrackpore, North 24 Parganas</h4>
+                        <p>This is the best organization i ever seen. This is the best place to design your dream home...
+                        </p>
+                    </div>
+
+                </section>
+
+                <section class="indicators">
+                    <div class="dot active" attr='0' onclick="switchTest(this)"></div>
+                    <div class="dot" attr='1' onclick="switchTest(this)"></div>
+                    <div class="dot" attr='2' onclick="switchTest(this)"></div>
+                    <div class="dot" attr='3' onclick="switchTest(this)"></div>
+                    <div class="dot" attr='4' onclick="switchTest(this)"></div>
+                </section>
+
+            </div>
+        </div>
+
+    <!--------------section 9  html starts here------------------->
+    <div class="marquee-container">
+        <h2>Our Trusted Partners</h2>
+        <p>Winning collaborations that produce winning designs.</p>
+        <div class="marquee">
+            <img src="images/bosch-logo.png" alt="Logo 1">
+            <img src="images/asian-paint-logo.png" alt="Logo 2">
+            <img src="images/siemens-logo.png" alt="Logo 3">
+            <img src="images/heittich-logo2.png" alt="Logo 4">
+            <img src="images/fabindia-logo2.jpg" alt="Logo 5">
+            <img src="images/philips-logo.webp" alt="Logo 6">
+            <img src="images/centuryply-logo.jpg" alt="Logo 6">
+            <img src="images/jaquar-logo.png" alt="Logo 6">
+            <img src="images/saint-gobain-logo2.png" alt="Logo 6">
+        </div>
+    </div>
+
+    <!--------------section 9 html ends here------------------->
+    <!---------------section 13 html starts here----------------------------->
+    <footer>
+        <!-- Water wave effect using SVG -->
+        <div class="wave-container">
+            <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#0052cc" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,138.7C672,139,768,149,864,165.3C960,181,1056,203,1152,202.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+
+        <!-- Footer content -->
+        <div class="footer-container">
+            <!-- About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Jais Interio stands out for its innovative approach and meticulous attention to detail. We offer a comprehensive range of services, including space planning, color consultation, furniture design, and bespoke decor solutions. </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Works</a></li>
+                    <li><a href="ourservices.html">Services</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@company.com" target="_blank" style="text-decoration: none; list-style: none; ">info@jaisinterio.com</a></p>
+                <p> <a href="tel:+919836790822" target="_blank" style="text-decoration: none; list-style: none; ">+91 9836790822</a> | 
+                    <a href="tel:+916292281394" target="_blank" style="text-decoration: none; list-style: none; ">+91 6292281394</a></p>
+                <p><a href="https://www.google.com/maps?q=Dey+Apartments,+NH+12,+Moyna+Godi,+Barasat,+Kolkata-7000125" target="_blank" style="text-decoration: none; list-style: none; ">
+                    Dey Apartments, NH 12, Moyna Godi, Barasat, Kolkata-7000125</p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Text -->
+        <p class="footer-bottom-text" style="text-decoration: none; list-style: none; color: #fff; ">&copy; 2024 Jais Interio | All Rights Reserved | Designed By <a href="https://sarafworldwide.in/" target="_blank" style="text-decoration: none; color: #fff;">Saraf Worldwide</a></p>
+    </footer>
+
+    <!-- Include FontAwesome icons for social links -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Include FontAwesome icons for social links -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!---------------section 13 html ends here----------------------------->
+    <script src="script.js"></script>
+    <script>
+        let activeIndex = 0;
+        const testimonialItems = document.querySelectorAll('.testimonial-slide');
+
+        function showSlide(index) {
+            testimonialItems.forEach((testimonialItem, i) => {
+                testimonialItem.classList.remove('active');
+                if (i === index) {
+                    testimonialItem.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            activeIndex = (activeIndex + 1) % testimonialItems.length;
+            showSlide(activeIndex);
+        }
+
+        function prevSlide() {
+            activeIndex = (activeIndex - 1 + testimonialItems.length) % testimonialItems.length;
+            showSlide(activeIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(activeIndex);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <!--------------------login pop up js starts here----------------------->
+    <script>
+        // Popup control
+        var popupLogin = document.getElementById('popup_form');
+        var close = document.getElementById('close_btn');
+
+        function showPopup() {
+            popupLogin.classList.add('anyname');
+        }
+
+        function hidePopup() {
+            popupLogin.classList.remove('anyname');
+        }
+
+        function setupPopup() {
+            // Initially show the popup
+            showPopup();
+
+            // Set interval to hide the popup after 5 seconds and show again
+            setInterval(function () {
+                hidePopup(); // Hide the popup
+                setTimeout(function () {
+                    showPopup(); // Show the popup again after 5 seconds
+                }, 5000); // Adjust timing if needed
+            }, 10000);
+        }
+
+        // Initialize popup setup on page load
+        window.addEventListener("load", function () {
+            setupPopup();
+        });
+
+        // Close button event listener
+        close.addEventListener("click", function () {
+            hidePopup();
+        });
+
+        // Handle option selection
+        document.addEventListener('DOMContentLoaded', () => {
+            const floorplanOptions = document.querySelectorAll('#popup_floorplan .form1box1');
+            const purposeOptions = document.querySelectorAll('#popup_purpose .form1box1');
+            const proceedButton = document.getElementById('popup_proceed');
+            let selectedFloorplan = null;
+            let selectedPurpose = null;
+
+            // Handle floorplan option selection
+            floorplanOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    floorplanOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedFloorplan = option.getAttribute('data-value');
+                    updateProceedButton();
+                });
+            });
+
+            // Handle purpose option selection
+            purposeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    purposeOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedPurpose = option.getAttribute('data-value');
+                    updateProceedButton();
+                });
+            });
+
+            function updateProceedButton() {
+                if (selectedFloorplan && selectedPurpose) {
+                    proceedButton.disabled = false;
+                } else {
+                    proceedButton.disabled = true;
+                }
+            }
+
+            // Store selected values in localStorage before proceeding
+            proceedButton.addEventListener('click', () => {
+                if (selectedFloorplan && selectedPurpose) {
+                    localStorage.setItem('popup_floorplan', selectedFloorplan);
+                    localStorage.setItem('popup_purpose', selectedPurpose);
+                }
+            });
+
+            // Optional: Hide popup when clicking outside the form
+            window.addEventListener('click', (event) => {
+                if (event.target === popupLogin) {
+                    hidePopup();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-93c48caf-b069-4258-ace7-bcb04a3ae7e8" data-elfsight-app-lazy></div>
+    <script type="text/javascript">
+
+        // Access the testimonials
+        let testSlide = document.querySelectorAll('.testItem');
+        // Access the indicators
+        let dots = document.querySelectorAll('.dot');
+
+        var counter = 0;
+
+        // Add click event to the indicators
+        function switchTest(currentTest) {
+            currentTest.classList.add('active');
+            var testId = currentTest.getAttribute('attr');
+            if (testId > counter) {
+                testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+                counter = testId;
+                testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+            }
+            else if (testId == counter) { return; }
+            else {
+                testSlide[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                counter = testId;
+                testSlide[counter].style.animation = 'prev2 0.5s ease-in forwards';
+            }
+            indicators();
+        }
+
+        // Add and remove active class from the indicators
+        function indicators() {
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            dots[counter].className += ' active';
+        }
+
+        // Code for auto sliding
+        function slideNext() {
+            testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+            if (counter >= testSlide.length - 1) {
+                counter = 0;
+            }
+            else {
+                counter++;
+            }
+            testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+            indicators();
+        }
+        function autoSliding() {
+            deleteInterval = setInterval(timer, 4000);
+            function timer() {
+                slideNext();
+                indicators();
+            }
+        }
+        autoSliding();
+
+        // Stop auto sliding when mouse is over the indicators
+        const container = document.querySelector('.indicators');
+        container.addEventListener('mouseover', pause);
+        function pause() {
+            clearInterval(deleteInterval);
+        }
+
+        // Resume sliding when mouse is out of the indicators
+        container.addEventListener('mouseout', autoSliding);
+
+    </script>
+    <script>
+        $('.carousel').flipster({
+           style:'carousel',
+           spacing: -0.3,
+
+        });
+    </script>
+<script>
+let currentIndex = 0;
+let slideInterval;
+
+function moveSlide(step) {
+    const slides = document.querySelectorAll('.slider-item');
+    const totalSlides = slides.length;
+    const progressBarFill = document.querySelector('.progress-fill');
+
+    // Hide the current slide
+    slides[currentIndex].style.display = 'none';
+
+    // Update the index
+    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+
+    // Show the new slide
+    slides[currentIndex].style.display = 'block';
+
+    // Update the progress bar fill
+    const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
+    progressBarFill.style.width = progressPercent + '%';
+
+    resetAutoPlay(); // Reset autoplay on manual navigation
+}
+
+function autoPlay() {
+    moveSlide(1);
+}
+
+// Initialize slider
+function initializeSlider() {
+    const slides = document.querySelectorAll('.slider-item');
+    const totalSlides = slides.length;
+    const progressBarFill = document.querySelector('.progress-fill');
+
+    // Hide all slides initially
+    slides.forEach(slide => slide.style.display = 'none');
+
+    // Show the first slide
+    slides[0].style.display = 'block';
+
+    // Set initial progress bar fill
+    progressBarFill.style.width = (1 / totalSlides) * 100 + '%';
+
+    // Set autoplay every 5 seconds
+    slideInterval = setInterval(autoPlay, 2500);
+}
+
+// Reset autoplay when user manually navigates
+function resetAutoPlay() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(autoPlay, 2500);
+}
+
+// Start everything once the DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeSlider);
+    
+    </script>
+    <script src="jquery.hislide.js"></script>
+    <script src="jquery.flipster.min.js"></script>
+</body>
+
+</html>

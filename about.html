@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAIS-About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                    <!-- <h1>JAIS INTERIO</h1> -->
+                     <!-- <img src="images/jais-main-logo.jpeg" alt="image_not_available"> -->
+                      <img src="images/jais-logo-svg.svg" alt="image_not_available">
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="about.html" class="nav__link">About Us</a></li>
+                    <li><a href="work.html" class="nav__link">Works</a></li>
+                    <li><a href="ourservices.html" class="nav__link ">Our Services</a></li>
+                    <li><a href="contactus.html" class="nav__link">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!---------about us section 1 html starts here-------------------->
+    <section class="asec-01">
+        <div class="about-left">
+
+            <img src="images/large-pic.jpg" alt="image_not_available" class="background-image">
+
+            <!-- Overlayed Swiper slider -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="images/g1.webp" alt="image_not_available">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="images/g2.webp" alt="image_not_available">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="images/g3.webp" alt="image_not_available">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/g4.webp" alt="image_not_available">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/g5.webp" alt="image_not_available">
+                    </div>
+                </div>
+                <!-- Pagination for the swiper -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <div class="aboutright">
+            <!-- <h5>JAIS INTERIOR</h5> -->
+            <h2>Best Interior Designer in Barasat, Kolkata</h2>
+            <p>At Jais Interio, we're more than just interior designers; we're creators of beautiful, functional spaces
+                that reflect your style and personality. Our passion for interior design goes beyond aesthetics – we
+                understand that your home or workspace is an extension of your identity, and we're here to make your
+                dream space into reality.</p>
+            <p>Our interior design service is the heart of Jais Interio. With an expert team of designers, we craft
+                interiors that seamlessly blend form and function. Whether you're refreshing your living room, upgrading
+                your office, or giving your home a complete makeover, we've got you covered.</p>
+            <p>Jais Interio is a go-to destination for all your design needs. From plywood & hardware, to laminates &
+                veneers, aluminum sliding installation, stainless steel railing, wallpapers, UPVC window installation,
+                ACP and glazing services, PVC & WPC doors solution, and more. We offer a comprehensive range of interior
+                designing services to transform your space into a masterpiece.</p>
+        </div>
+    </section>
+    <!---------about us section 1 html ends here-------------------->
+    <!-- Popup Form using <dialog> -->
+        <div class="login_popup" id="popup_form">
+            <div class="box">
+                <div class="form1 formextra">
+                    <div class="close" id="close_btn">&times;</div>
+                    <h1>Personalized Interior Design Quote in Minutes</h1>
+                    <p>STEP 1 OF 2</p>
+                    <h5>Your floorplan</h5>
+                    <div class="form1boxes" id="popup_floorplan">
+                        <div class="form1box1" data-value="1">1 BHK</div>
+                        <div class="form1box1" data-value="2">2 BHK</div>
+                        <div class="form1box1" data-value="3">3 BHK</div>
+                        <div class="form1box1" data-value="4">4 BHK</div>
+                    </div>
+                    <h5>Purpose</h5>
+                    <div class="form1boxes" id="popup_purpose">
+                        <div class="form1box1" data-value="move-in">Move In</div>
+                        <div class="form1box1" data-value="rent-out">Rent Out</div>
+                        <div class="form1box1" data-value="renovate">Renovate</div>
+                    </div>
+                    <a href="form2.html" id="proceed_link" target="_blank"><button class="btn2" id="popup_proceed" disabled>GET FREE ESTIMATE</button></a>
+                </div>
+            </div>
+        </div>
+
+    <!---------about us section 2 html starts here-------------------->
+    <section class="asec-02">
+        <div class="sec-02content">
+            <h2>Interior Design</h2>
+            <p>Transform your space with our expert interior design services</p>
+        </div>
+    </section>
+    <!---------about us section 2 html ends here-------------------->
+    <footer>
+        <!-- Water wave effect using SVG -->
+        <div class="wave-container">
+            <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#0052cc" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,138.7C672,139,768,149,864,165.3C960,181,1056,203,1152,202.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+
+        <!-- Footer content -->
+        <div class="footer-container">
+            <!-- About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Jais Interio stands out for its innovative approach and meticulous attention to detail. We offer a comprehensive range of services, including space planning, color consultation, furniture design, and bespoke decor solutions. </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Works</a></li>
+                    <li><a href="ourservices.html">Services</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@company.com" target="_blank" style="text-decoration: none; list-style: none; ">info@jaisinterio.com</a></p>
+                <p> <a href="tel:+919836790822" target="_blank" style="text-decoration: none; list-style: none; ">+91 9836790822</a> | 
+                    <a href="tel:+916292281394" target="_blank" style="text-decoration: none; list-style: none; ">+91 6292281394</a></p>
+                <p><a href="https://www.google.com/maps?q=Dey+Apartments,+NH+12,+Moyna+Godi,+Barasat,+Kolkata-7000125" target="_blank" style="text-decoration: none; list-style: none; ">
+                    Dey Apartments, NH 12, Moyna Godi, Barasat, Kolkata-7000125</p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Text -->
+        <p class="footer-bottom-text" style="text-decoration: none; list-style: none; color: #fff; ">&copy; 2024 Jais Interio | All Rights Reserved | Designed By <a href="https://sarafworldwide.in/" target="_blank" style="text-decoration: none; color: #fff;">Saraf Worldwide</a></p>
+    </footer>
+
+    <!-- Include FontAwesome icons for social links -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Include FontAwesome icons for social links -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!---------------section 13 html ends here----------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-93c48caf-b069-4258-ace7-bcb04a3ae7e8" data-elfsight-app-lazy></div>
+    <script>
+        // Popup control
+        var popupLogin = document.getElementById('popup_form');
+        var close = document.getElementById('close_btn');
+
+        function showPopup() {
+            popupLogin.classList.add('anyname');
+        }
+
+        function hidePopup() {
+            popupLogin.classList.remove('anyname');
+        }
+
+        function setupPopup() {
+            // Initially show the popup
+            showPopup();
+
+            // Set interval to hide the popup after 5 seconds and show again
+            setInterval(function () {
+                hidePopup(); // Hide the popup
+                setTimeout(function () {
+                    showPopup(); // Show the popup again after 5 seconds
+                }, 5000); // Adjust timing if needed
+            }, 10000);
+        }
+
+        // Initialize popup setup on page load
+        window.addEventListener("load", function () {
+            setupPopup();
+        });
+
+        // Close button event listener
+        close.addEventListener("click", function () {
+            hidePopup();
+        });
+
+        // Handle option selection
+        document.addEventListener('DOMContentLoaded', () => {
+            const floorplanOptions = document.querySelectorAll('#popup_floorplan .form1box1');
+            const purposeOptions = document.querySelectorAll('#popup_purpose .form1box1');
+            const proceedButton = document.getElementById('popup_proceed');
+            let selectedFloorplan = null;
+            let selectedPurpose = null;
+
+            // Handle floorplan option selection
+            floorplanOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    floorplanOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedFloorplan = option.getAttribute('data-value');
+                    updateProceedButton();
+                });
+            });
+
+            // Handle purpose option selection
+            purposeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    purposeOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedPurpose = option.getAttribute('data-value');
+                    updateProceedButton();
+                });
+            });
+
+            function updateProceedButton() {
+                if (selectedFloorplan && selectedPurpose) {
+                    proceedButton.disabled = false;
+                } else {
+                    proceedButton.disabled = true;
+                }
+            }
+
+            // Store selected values in localStorage before proceeding
+            proceedButton.addEventListener('click', () => {
+                if (selectedFloorplan && selectedPurpose) {
+                    localStorage.setItem('popup_floorplan', selectedFloorplan);
+                    localStorage.setItem('popup_purpose', selectedPurpose);
+                }
+            });
+
+            // Optional: Hide popup when clicking outside the form
+            window.addEventListener('click', (event) => {
+                if (event.target === popupLogin) {
+                    hidePopup();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

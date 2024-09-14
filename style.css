@@ -1,0 +1,1932 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family:'Times New Roman', Times, serif;
+   
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+  }
+  
+  body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    position: relative;
+  }
+  
+  
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+  
+  /*=============== VARIABLES CSS ===============*/
+  :root {
+    --header-height: 3.45rem;
+  
+    /*========== Colors ==========*/
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+  
+    /*========== Font and typography ==========*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+  
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+  
+  /*========== Responsive typography ==========*/
+  @media screen and (min-width: 1024px) {
+    :root {
+      --normal-font-size: 1rem;
+    }
+  }
+  
+  /* Increase the width of the "Services" dropdown menu */
+  .dropdown__menu {
+    width: 200px;
+    /* Adjust this value as needed */
+  }
+  
+  /* Additional styling for better alignment and visibility */
+  .services-dropdown .dropdown__link,
+  .services-dropdown .dropdown__sublink {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .services-dropdown .dropdown__link:hover,
+  .services-dropdown .dropdown__sublink:hover {
+    background-color: var(--black-color-lighten);
+  }
+  
+  /*=============== BASE ===============*/
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .container {
+    max-width: 80%;
+    margin-inline: 1.5rem;
+  }
+  
+  /*=============== HEADER ===============*/
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    text-align: center;
+    
+    width: 100%;
+    background: url(images/navbar-bcg.jpg) no-repeat center center/cover;
+    /* background: transparent; */
+    background-size: 100% 100px;
+    z-index: var(--z-fixed);
+  }
+  
+  /*=============== NAV ===============*/
+  .nav {
+    height: var(--header-height);
+  }
+  
+  .nav__logo,
+  .nav__burger,
+  .nav__close {
+    color: var(--white-color);
+    z-index: 1;
+  }
+  
+  .nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+  }
+  
+  .nav__logo img {
+    font-weight: initial;
+    font-size: 1.25rem;
+    width: 280px;
+     padding:20px;
+     height: auto;
+  }
+  
+  .nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .nav__burger,
+  .nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+    color: #37210f;
+  }
+  
+  .nav__close {
+    opacity: 0;
+  }
+  .nav__list li a{
+    color: #37210f;
+    font-weight: bold;
+  }
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width: 1118px) {
+    .nav__menu {
+      position: absolute;
+      left: 0;
+      top: 2.5rem;
+      width: 100%;
+      height: calc(100vh - 3.5rem);
+      overflow: auto;
+      pointer-events: none;
+      opacity: 0;
+      transition: top .4s, opacity .3s;
+    }
+    .nav__menu .nav__list .nav__link.nav__culture {
+      margin-bottom: 1.5rem; 
+      
+    }
+  
+    .nav__menu::-webkit-scrollbar {
+      width: 0;
+    }
+  
+    .nav__list {
+      background-color: var(--black-color);
+      padding-top: 1rem;
+    }
+    
+  }
+  
+  .nav__link {
+    color: var(--white-color);
+    background-color: transparent;
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 1.5rem;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color .3s, color 0.3s ease 0.1s;
+  }
+  
+  .nav__link:hover {
+    color: gray;
+    background-color: var(--black-color-light);
+  }
+  
+  /* Show menu */
+  .show-menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+  }
+  
+  /* Show icon */
+  .show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  
+  .show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+  
+  /*=============== DROPDOWN ===============*/
+  .dropdown__item {
+    cursor: pointer;
+  }
+  
+  .dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform .4s;
+  }
+  
+  .dropdown__link,
+  .dropdown__sublink {
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    color: var(--white-color);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    column-gap: .5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background-color .3s;
+  }
+  
+  .dropdown__link i,
+  .dropdown__sublink i {
+    font-size: 1.25rem;
+    font-weight: initial;
+  }
+  
+  .dropdown__link:hover,
+  .dropdown__sublink:hover {
+    background-color: var(--black-color);
+    color: var(--white-color);
+  }
+  
+  .dropdown__menu,
+  .dropdown__submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+  }
+  
+  /* Show dropdown menu & submenu */
+  .dropdown__item:hover .dropdown__menu,
+  .dropdown__subitem:hover > .dropdown__submenu {
+    max-height: 1000px;
+    transition: max-height .4s ease-in;
+    overflow: visible;
+  }
+  
+  /* Rotate dropdown icon */
+  .dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+  }
+  
+  /*=============== DROPDOWN SUBMENU ===============*/
+  .dropdown__add {
+    margin-left: auto;
+  }
+  
+  .dropdown__sublink {
+    background-color: transparent;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    color: var(--white-color);
+  }
+  
+  .dropdown__sublink:hover {
+    background-color: var(--black-color);
+    color: var(--white-color);
+  }
+  
+  .dropdown__submenu::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .dropdown__submenu::-webkit-scrollbar-thumb {
+    background-color: var(--black-color);
+    border-radius: 4px;
+  }
+  .dropdown__menu.show-dropdown {
+    max-height: 1000px; /* Adjust as needed */
+    overflow: visible;
+    transition: max-height 0.4s ease-in;
+  }
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For small devices */
+  @media screen and (max-width: 340px) {
+    .header {
+      width: 100%;
+      height: auto;
+      overflow-x: hidden;
+    }
+    .container {
+      margin-inline: 1rem;
+    }
+  
+    .nav__link {
+      padding-inline: 1rem;
+    }
+    .nav__logo img{
+      width: fit-content;
+      height: auto;
+    }
+    .nav__menu ul .nav__list li a{
+      color: #fff;
+    }
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 1118px) {
+    .container {
+      margin-inline: auto;
+    }
+  
+    .nav {
+      height: calc(var(--header-height) + 2rem);
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .nav__toggle {
+      display: none;
+    }
+  
+    .nav__list {
+      height: 100%;
+      display: flex;
+      column-gap: 3rem;
+    }
+  
+    .nav__link {
+      height: 100%;
+      padding: 0;
+      justify-content: initial;
+      column-gap: 0.25rem;
+      
+    }
+  
+    .nav__link:hover {
+      background-color: transparent;
+    }
+  
+    .dropdown__item,
+    .dropdown__subitem {
+      position: relative;
+    }
+  
+    .dropdown__menu,
+    .dropdown__submenu {
+      max-height: initial;
+      overflow: initial;
+      position: absolute;
+      left: 0;
+      top: 6rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, top .3s;
+    }
+  
+    .dropdown__link,
+    .dropdown__sublink {
+      padding-inline: 1rem 3.5rem;
+      color: var(--white-color);
+    }
+  
+    .dropdown__submenu {
+      position: absolute;
+      left: 100%;
+      top: .5rem;
+    }
+  
+    /* Show dropdown menu */
+    .dropdown__item:hover .dropdown__menu {
+      opacity: 1;
+      top: 5.5rem;
+      pointer-events: initial;
+      transition: top .3s;
+    }
+  
+    /* Show dropdown submenu */
+    .dropdown__subitem:hover > .dropdown__submenu {
+      opacity: 1;
+      top: 0;
+      pointer-events: initial;
+      transition: top .3s;
+    }
+   
+  }
+  /*-------------------------responsive navbar design new starts here------------------*/
+  /*--------------------------section 1 css starts  here---------------------------*/
+  .sec-01{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+}
+.swiper-slide img{
+    object-fit: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+.form1 {
+  position: absolute;
+  top: 1.5%;
+  right: 5%;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.formextra{
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+#popup_proceed .btn2{
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Header styling */
+.form1 h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #37210f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Step description styling */
+.form1 p {
+  font-size: 0.9rem;
+  color: #764c25;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0;
+}
+
+/* Subheading styling */
+.form1 h5 {
+  padding-top: 20px;
+  color: #37210f;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Flexbox for layout */
+.form1boxes {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+  box-sizing: border-box;
+  gap: 15px; /* Adjusted for better spacing */
+  color: #37210f;
+}
+
+/* Box styling */
+.form1box1 {
+  border: 1px solid #37210f;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover and selected state styling */
+.form1box1:hover,
+.form1box1.selected {
+  background-color: #764c25;
+  color: #fff;
+}
+
+/* Button styling */
+.btn1 {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #37210f;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button disabled state */
+.btn1:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Button hover state */
+.btn1:hover:not(:disabled) {
+  background-color: #fff;
+  color: #764c25;
+}
+
+
+  /*--------------------------section 1 css ends  here---------------------------*/
+  /*-------------------------section 1 responsive css starts here--------------*/
+  @media only screen and (min-height:200px) and (max-width:1336px){
+
+      .sec-01{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .form1{
+        position: absolute;
+        top: 1%;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+      }
+      .swiper-container .swiper-button-next,.swiper-container .swiper-button-prev{
+        display: none;
+      }
+  }
+  /*-------------------------section 1 responsive css ends here--------------*/
+  /*-------------------------section 2 css starts here--------------*/
+  /*-------this section has to be there for a review as in the mobile visibility this section is not seen ----------------------*/
+  .sec-02 {
+    width: 100%;
+    max-height: 40vh;
+    text-align: center;
+    align-items: center;
+    z-index: 100;
+    margin: auto auto;
+    /* background-color: #000; */
+}
+
+.sec-02 h1 {
+    font-size: 2.5rem;
+    padding-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    color: #37210f;
+    font-weight: bold;
+}
+
+.slider1 {
+    display: grid;
+    place-items: center;
+    height: auto; /* Adjusted to fit content */
+    margin: auto;
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    min-height: 60vh;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.slide-track {
+    display: flex;
+    width: 100%; /* Adjust width to fit parent container */
+    animation: scroll 10s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Adjusted to fit content width */
+    }
+}
+
+.slide12 {
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+    flex-direction: column;
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+}
+
+.slide12 p {
+    padding-top: 20px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #764c25;
+}
+
+.slide12 i {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    font-size: 50px !important;
+    color: #37210f;
+}
+
+.slide12 i:hover {
+    transform: translateZ(20px);
+    cursor: pointer;
+}
+
+.slider1::before,
+.slider1::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.slider1::before {
+    left: 0;
+    top: 0;
+}
+
+.slider1::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+/* Mobile responsive styling */
+@media only screen and (max-width: 768px) {
+    .sec-02 {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slider1 {
+        width: 100%;
+        max-width: 80%;
+        height: auto;
+        min-height: 40vh; /* Adjust height for mobile */
+    }
+
+    .slide-track {
+        display: flex;
+        width: auto; /* Adjust width for better scrolling */
+        animation: scroll-mobile 20s linear infinite; /* Slower scroll speed for mobile */
+    }
+
+    @keyframes scroll-mobile {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-200%); /* Adjusted for new width */
+        }
+    }
+
+    .slide12 {
+        width: 180px; /* Adjust width for mobile */
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .slide12 i {
+        font-size: 40px !important; /* Adjust icon size for mobile */
+    }
+
+    .slide12 p {
+        font-size: 1rem; /* Adjust text size for mobile */
+    }
+}
+  /*-------------------------section 2 css ends here--------------*/
+  /*-------------------------section 3 css starts here--------------*/
+  .sec-03{
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    margin-top: 60px;
+    box-sizing: border-box;
+  }
+  .sec-03 h1{
+    font-size: 2rem;
+    color: #37210f;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  
+  .section3boxes{
+    display: flex;
+    justify-content: space-around;
+    /* flex-direction: row; */
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+   
+  }
+  .sec03box1 h2{
+    color: #37210f;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    box-sizing: border-box;
+    
+  }
+  .sec03box1:nth-child(1) h2{
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+  .sec03box1 p{
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #764c25;
+    font-weight: bold;
+  }
+  .sec03box1{
+    /* border: 2px solid red; */
+    flex: 1 0 24%;
+  }
+  .sec03box1 img{
+    width: 100%;
+    max-width: 40%;
+    height: auto;
+  }
+  .btn2{
+    width: fit-content;
+    height: auto;
+    background-color: #37210f;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .btn2:hover{
+    color: #764c25;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+  }
+
+  /*--------------mobile responsive css for section 3 starts here-------------*/
+  @media only screen and (min-width:200px) and (max-width:1336px){
+
+    .sec-03{
+      width: 100%;
+      height: auto;
+      align-items: center;
+      text-align: center;
+      overflow-y: auto;
+    }
+    .section3boxes{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn2{
+      width: auto;
+      height: auto;
+    }
+  }
+  /*--------------mobile responsive css for section 3 ends here-------------*/
+  /*-------------------------section 3 css ends here--------------*/
+  /*-------------------------section 4 css starts here--------------*/
+  .sec-04{
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .sec-04 h2{
+    font-size: 2rem;
+    padding: 30px 0px;
+    color: #37210f;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  .sec-04boxes{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap:20px;
+    width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+  .sec-04box1{
+    flex: 1 0 5%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .sec-04box1 img{
+    width: 100%;
+    max-width: 50%;
+    height: 100%;
+    max-height:50%
+  }
+  .sec-04box1 p{
+    font-size: 1.1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #764c25;
+  }
+   /*--------------mobile responsive css for section 4 starts here-------------*/
+   @media only screen and (min-width:200px) and (max-width:1336px){
+    .sec-04{
+      width: 100%;
+      height: auto;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+    .sec-04boxes{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .sec-04box1{
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+    }
+    .sec-04box1 img,.sec-04box1 p{
+      width: 100%;
+      height: 100%;
+    }
+   }
+   /*--------------mobile responsive css for section 4 ends here-------------*/
+  /*-------------------------section 4 css ends here--------------*/
+  /*----------------sec-experience  css starts here--------------*/
+.sec-10 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  text-align: center;
+  /* background-color: #5ba585; */
+  background-color: #764c25;
+}
+
+.sec-10 h1 {
+  font-size: 3rem;
+  padding-top: 30px;
+  box-sizing: border-box;
+  color: #fff;
+
+}
+
+.counter-container {
+  display: flex;
+  justify-content: space-evenly;
+  /* padding-top: 30px; */
+  box-sizing: border-box;
+  width: 100%;
+  /* max-width: 80%; */
+  margin: 0 auto;
+  align-items: center;
+  align-self: center;
+  gap: 30px;
+  box-sizing: border-box;
+  padding: 30px 30px;
+  color: #fff;
+}
+
+.counter-box {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 100px;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(241, 234, 224); */
+  /* background: linear-gradient(to right, rgb(209, 133, 72,0.8) 40%,#fff 100%); */
+  
+
+}
+
+.counter-box p {
+  font-size: 1.3rem;
+}
+
+.counter {
+  font-size: 3rem;
+}
+/*----------------section 10 responsive css starts here-----------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+  .sec-10{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+
+  }
+  .counter-container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+  .counter-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      height: 100px;
+      flex-direction: column;
+      flex-wrap: wrap;
+  }
+}
+/*----------------section 10 responsive css ends here-----------------*/
+/*----------------section 5  css starts here-----------------*/
+ .sec-05{
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  overflow: auto;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+.sec-05 h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #37210f;
+}
+.sec-05 p{
+  font-size: 1.2rem;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #764c25;
+  font-weight: bold;
+}
+/* Slider container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 70%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+
+/* Progress bar container */
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The outer progress bar */
+.progress-bar {
+  width: 80%;
+  height: 6px;
+  background-color: #ddd;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* The filling part of the progress bar */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #37210f;
+  transition: width 3s linear;
+}
+
+/* Markers for each slide */
+.progress-markers {
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.marker {
+  width: 2px;
+  height: 16px;
+  background-color: white;
+  position: relative;
+  top: 6px;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slider-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background-color: rgba(0,0,0,0.5); */
+  color: #000;
+  font-size: 30px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  height: 90px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Arrow hover effect */
+.prev:hover, .next:hover {
+  background-color: rgba(257,257,257,0.8);
+}
+
+/*----------------section 5 css responsive css starts here-------------*/
+ @media only screen and (min-width:200px) and (max-width:1336px){
+  .sec-05{
+    width: 100%;
+    height: auto;
+  }
+  .slider-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .slider{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  
+}  
+ 
+/*----------------section 5 css responsive css ends here-------------*/
+/*------------------gallery section css starts here------------------*/
+
+/*------------------gallery section css ends here------------------*/
+/*----------------section 5  css ends here-----------------*/
+/*----------------section 6  css starts here-----------------*/
+  .sec-06{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+  }
+  .sec-06 h2{
+    font-size: 2.5rem;
+    color: #37210f;
+    padding: 15px;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  .box-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .box1content{
+    min-height: 50vh;
+  }
+  .box1content h3{
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #37210f;
+  }
+
+  .box1content p{
+    font-size: 1rem;
+    color: #764c25;
+    font-weight: bold;
+  }
+  .box1{
+    width: 100%;
+    min-width: 28%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .box1 img{
+    width: fit-content;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+  .box1content{
+    text-align: left;
+    line-height: 1.6;
+  }
+  /*------------------responsive css design for sec-06 starts here------------*/
+  @media only screen and (min-width:200px) and (max-width:1336px){
+    .sec-06{
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .box-container{
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  }
+  /*------------------responsive css design for sec-06 ends here------------*/
+/*----------------section 6  css ends here-----------------*/
+/*----------------section 7  css starts here-----------------*/
+.sec-07{
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ebebeb;
+}
+.sec-07 h2{
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #37210f;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.sec-07 p{
+  color: #764c25;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.sec-07container{
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  height: auto;
+  justify-content: space-evenly;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sec-07box{
+  display: flex;
+  width: 100%;
+  max-width: 46%;
+  height: auto;
+  max-height: 40%;
+  gap: 20px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 8px #000;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.sec-07boxleft{
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sec-07boxleft h3{
+  padding: 10px 0px;
+  box-sizing: border-box;
+  color: #37210f;
+  font-weight: bold;
+}
+.sec-07boxleft p{
+  padding: 10px 0px;
+  line-height: 1.6;
+  box-sizing: border-box;
+  color: #764c25;
+  font-weight: bold;
+}
+.sec-07boxleft:nth-of-type(2) p {
+  /* Styles for the second instance */
+  font-size: 1rem;
+  padding: 50px;
+  box-sizing: border-box;
+  color: #555;
+  margin: 12px 0;
+}
+.sec-07boxleft img{
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+}
+.sec-07boxright img:nth-child(1) {
+  width: 100%;
+  max-width: 50%;
+  font-size: 0.7rem;
+  height: auto;
+  opacity: 0.6;
+}
+.sec-07boxright img:nth-child(2) {
+  width: 100%;
+  max-width: 50%;
+  font-size: 0.7rem;
+  height: auto;
+  opacity: 0.6;
+}
+/*-----------------------section -07 responsive css starts here----------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+  .sec-07{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+  }
+  .sec-07container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    gap: 25px;
+  }
+  .sec-07box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding: 10px 0px;
+  }
+  .sec-07boxleft,.sec-07boxright{
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+}
+/*-----------------------section -07 responsive css ends here----------------*/
+/*----------------section 7  css ends here-----------------*/
+/*----------------section 8  css starts here-----------------*/
+.sec-08 {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sec08header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 80%;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  height: auto;
+  
+}
+.sec08header h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #37240f;
+}
+.sec-08boxes{
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+}
+.sec-08box{
+  min-width: 0px;
+  height: 600px;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 5px 5px 5px #000;
+  border-radius: 15px;
+  border: 2px solid grey;
+  padding: 10px;
+  line-height: 1.6;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.sec08heading{
+  width: 100%;
+  display: flex;
+
+}
+.sec08heading img{
+  width: 100%;
+  max-width: 17%;
+  height: 20%;
+}
+.sec08heading h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #37210f;
+}
+.sec08content ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+}
+
+.sec08content ul li {
+  display: flex; /* Align items in a row */
+  align-items: flex-start; /* Vertically align the image and text */
+  padding: 10px 0px;
+  box-sizing: border-box;
+  color: #764c25;
+  font-weight: bold;
+}
+
+.sec08content ul li img {
+  width: 25px;
+  height: 25px;
+}
+/*--------------------section 8  responsive css starts here ------------------------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+  .sec-08{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+  .sec08header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    line-height: 1.6;
+
+  }
+  .sec08header h2{
+    padding: 10px 0px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .sec-08boxes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .sec-08box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .sec08heading{
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0px;
+    box-sizing: border-box;
+  }
+}
+/*--------------------section 8  responsive css ends here ------------------------*/
+
+/*----------------section 8  css ends here-----------------*/
+/*----------------------testimonial section css starts here------------------*/
+.container2{
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  background-color: #ebebeb;
+}
+.container2 .contents-wraper{
+  width: 70%;
+  min-height: inherit;
+  margin: 0px auto;
+  text-align: center;
+}
+.contents-wraper .testi-header h1{
+  position: relative;
+  font-size: 40px;
+  /* text-transform: uppercase; */
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #37210f;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.contents-wraper .testi-header h1::before{
+  content: '';
+  width: 200px;
+  height: 2px;
+  background-color: #764c25;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+.contents-wraper .testRow{
+  width: 100%;
+  min-height: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.testRow .testItem{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.testRow .testItem:not(.active){
+  top: 0;
+  left: -100%;
+}
+.testRow .testItem img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  outline: 2px solid #764c25;
+  outline-offset: 2px;
+}
+.testRow .testItem h3{
+  font-size: 30px;
+  font-style: italic;
+  padding: 7px;
+  color: #37210f;
+}
+.testRow .testItem h4{
+  font-style: italic;
+  color: #764c25;
+}
+.testRow .testItem p{
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding: 10px;
+}
+.contents-wraper .indicators{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  cursor: pointer;
+}
+.contents-wraper .indicators .dot{
+  width: 15px;
+  height: 15px;
+  margin: 0px 3px;
+  border: 3px solid #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+.contents-wraper .indicators .active{
+  background-color: #37210f;
+}
+@keyframes next1{
+  from{
+    left: 0%;
+  }
+  to{
+    left: -100%;
+  }
+}
+@keyframes next2{
+  from{
+    left: 100%;
+  }
+  to{
+    left: 0%;
+  }
+}
+
+@keyframes prev1{
+  from{
+    left: 0%;
+  }
+  to{
+    left: 100%;
+  }
+}
+@keyframes prev2{
+  from{
+    left: -100%;
+  }
+  to{
+    left: 0%;
+  }
+}
+
+@media(max-width: 550px){
+  .container2 .contents-wraper{
+    width: 90%;
+  }
+  .contents-wraper .header h1{
+    font-size: 32px;
+  }
+  .testRow .testItem h3{
+    font-size: 26px;
+  }
+  .testRow .testItem p{
+    font-size: 16px;
+    letter-spacing: initial;
+    line-height: initial;
+  }
+
+}
+/*----------------------testimonial section css ends here------------------*/
+/*----------------section 9  css starts here-----------------*/
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%; 
+  max-width: 80%;
+  background-color: #fff; 
+  padding: 20px 0; 
+  margin: auto auto;
+  min-height: 50vh;
+}
+.marquee-container h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  color: #37210f;
+  text-align: center;
+}
+.marquee-container p{
+  color: #764c25;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.marquee {
+  display: flex;
+  gap: 50px; 
+  width: max-content; 
+  box-sizing: border-box;
+  animation: marquee 10s linear infinite; 
+}
+
+.marquee img {
+  height: 100px;
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+/*----------------section 9  css ends here-----------------*/
+/*----------------section 9 responsive css starts here----------*/
+@media only screen and (min-width:200px) and (max-width:1336px){
+  .marquee-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .marquee{
+    /* display: flex; */
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*----------------section 9 responsive css ends here----------*/
+/*-------------------------login pop up form starts here--------------------*/
+
+/* Container for the popup */
+.login_popup {
+  position: fixed; /* Keeps it fixed in the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hidden by default */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for distinction */
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Positioned above other content but not interfering */
+}
+
+/* Popup box styling */
+.login_popup .box {
+  background-color: #fff;
+  /* padding: 20px; */
+  width: 100%; 
+  max-width: 50%; 
+  min-height: 85vh; 
+  border-radius: 20px;
+  position: relative;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 1000; 
+  overflow-y: auto; 
+}
+
+
+.login_popup.anyname {
+  display: flex; 
+  opacity: 1;
+}
+
+/* Hide the popup */
+.login_popup.hide {
+  display: none; /* Hide the popup */
+}
+
+/* Close button styling */
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .login_popup {
+    padding: 10px; /* Adjust padding for smaller screens */
+    
+  }
+
+  .login_popup .box {
+    width: 100%;
+    min-height: 90vh; 
+    max-width: 100%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    
+  }
+}
+/*-----------------login pop up responsive css ends here------------------*/
+/*-------------------------login pop up form ends here--------------------*/
+/*----------------sec-13  css starts here--------------*/
+/* Footer styling */
+footer {
+  position: relative;
+  /* background-color: #0052cc; */
+  background-color: #764c25;
+  color: white;
+  width: 100%;
+  min-height: 50vh;
+  text-align: center;
+  padding: 30px 0 20px;
+  margin: auto auto;
+}
+
+/* SVG Wave effect */
+.wave-container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 220px;
+  margin: 20px;
+  text-align: left;
+  line-height: 1.5;
+}
+.footer-column p a{
+  color: #fff;
+}
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  /* color: #ffdd57; */
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+
+.footer-column p, .footer-column ul {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.footer-column ul {
+  list-style-type: none;
+}
+
+.footer-column ul li {
+  margin: 10px 0;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffdd57;
+}
+
+.social-links li {
+  display: block;
+  margin: 10px 0;
+ 
+}
+.social-links li ul a{
+  text-align: left;
+  align-items: left;
+  justify-content: left;
+}
+.social-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links li a:hover {
+  color: #ffdd57;
+}
+
+/* Footer bottom text */
+.footer-bottom-text {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-column {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+  }
+}
+
+/*---------------------main footer css ends here-------------------*/
+/*----------------sec-13  css ends here--------------*/
